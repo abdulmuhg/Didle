@@ -23,7 +23,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.Transaction;
 
 import personal.abdulmughniaf.diarybook.R;
-import personal.abdulmughniaf.diarybook.activity.PostDetailActivity;
+import personal.abdulmughniaf.diarybook.activity.DiaryDetailActivity;
 import personal.abdulmughniaf.diarybook.models.Post;
 import personal.abdulmughniaf.diarybook.viewholder.PostViewHolder;
 
@@ -45,7 +45,7 @@ public abstract class PostListFragment extends Fragment {
     public View onCreateView (LayoutInflater inflater, ViewGroup container,
                               Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_all_posts, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_all_diary, container, false);
 
         // [START create_database_reference]
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -79,7 +79,7 @@ public abstract class PostListFragment extends Fragment {
             @Override
             public PostViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
                 LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-                return new PostViewHolder(inflater.inflate(R.layout.item_post, viewGroup, false));
+                return new PostViewHolder(inflater.inflate(R.layout.item_diary, viewGroup, false));
             }
 
             @Override
@@ -91,9 +91,9 @@ public abstract class PostListFragment extends Fragment {
                 viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // Launch PostDetailActivity
-                        Intent intent = new Intent(getActivity(), PostDetailActivity.class);
-                        intent.putExtra(PostDetailActivity.EXTRA_POST_KEY, postKey);
+                        // Launch DiaryDetailActivity
+                        Intent intent = new Intent(getActivity(), DiaryDetailActivity.class);
+                        intent.putExtra(DiaryDetailActivity.EXTRA_POST_KEY, postKey);
                         startActivity(intent);
                     }
                 });

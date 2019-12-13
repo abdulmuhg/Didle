@@ -30,9 +30,9 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
 import personal.abdulmughniaf.diarybook.R;
-import personal.abdulmughniaf.diarybook.fragment.MyPostsFragment;
-import personal.abdulmughniaf.diarybook.fragment.MyTopPostsFragment;
-import personal.abdulmughniaf.diarybook.fragment.RecentPostsFragment;
+import personal.abdulmughniaf.diarybook.fragment.MyDiaryFragment;
+import personal.abdulmughniaf.diarybook.fragment.MyTopDiaryFragment;
+import personal.abdulmughniaf.diarybook.fragment.RecentDiaryFragment;
 
 public class  MainActivity extends BaseActivity {
 
@@ -50,9 +50,9 @@ public class  MainActivity extends BaseActivity {
         mPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager(),
                 FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             private final Fragment[] mFragments = new Fragment[] {
-                    new RecentPostsFragment(),
-                    new MyPostsFragment(),
-                    new MyTopPostsFragment(),
+                    new RecentDiaryFragment(),
+                    new MyDiaryFragment(),
+                    new MyTopDiaryFragment(),
             };
             private final String[] mFragmentNames = new String[] {
                     getString(R.string.heading_home),
@@ -78,11 +78,11 @@ public class  MainActivity extends BaseActivity {
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        // Button launches NewPostActivity
+        // Button launches NewDiaryActivity
         findViewById(R.id.fabNewPost).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, NewPostActivity.class));
+                startActivity(new Intent(MainActivity.this, NewDiaryActivity.class));
             }
         });
     }

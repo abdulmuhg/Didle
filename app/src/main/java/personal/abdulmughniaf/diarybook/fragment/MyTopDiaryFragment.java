@@ -3,9 +3,9 @@ package personal.abdulmughniaf.diarybook.fragment;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
 
-public class MyTopPostsFragment extends PostListFragment {
+public class MyTopDiaryFragment extends PostListFragment {
 
-    public MyTopPostsFragment() {}
+    public MyTopDiaryFragment() {}
 
     @Override
     public Query getQuery(DatabaseReference databaseReference) {

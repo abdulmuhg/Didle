@@ -12,7 +12,7 @@
 
         <include
             android:id="@+id/postAuthorLayout"
-            layout="@layout/include_post_author"
+            layout="@layout/include_diary_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true" />
@@ -45,7 +45,7 @@
 
         </LinearLayout>
 
-        <include layout="@layout/include_post_text"
+        <include layout="@layout/include_diary_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
