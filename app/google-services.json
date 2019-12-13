@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "14877633498",
+    "firebase_url": "https://diarybook-ara.firebaseio.com",
+    "project_id": "diarybook-ara",
+    "storage_bucket": "diarybook-ara.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14877633498:android:831508300cceaa828aaee3",
+        "android_client_info": {
+          "package_name": "personal.abdulmughniaf.diarybook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14877633498-jiigv3on5tgn4e6mkd6v5gtv929rtq0r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "personal.abdulmughniaf.diarybook",
+            "certificate_hash": "0ad127b8d4005cb7544214de88fc67a7384e4ca8"
+          }
+        },
+        {
+          "client_id": "14877633498-qjb4gjb2isrfplloe1mikcjhr7dba63t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT8km1lyotAMM-_lNkJtzE5QVOhKwxG6Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14877633498-qjb4gjb2isrfplloe1mikcjhr7dba63t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
