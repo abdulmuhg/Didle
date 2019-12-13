@@ -41,14 +41,11 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
-
-        // Views
         mEmailField = findViewById(R.id.fieldEmail);
         mPasswordField = findViewById(R.id.fieldPassword);
         mSignInButton = findViewById(R.id.buttonSignIn);
         mSignUpButton = findViewById(R.id.buttonSignUp);
 
-        // Click listeners
         mSignInButton.setOnClickListener(this);
         mSignUpButton.setOnClickListener(this);
     }
@@ -57,7 +54,6 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
     public void onStart() {
         super.onStart();
 
-        // Check auth on Activity start
         if (mAuth.getCurrentUser() != null) {
             onAuthSuccess(mAuth.getCurrentUser());
         }
@@ -120,10 +116,8 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
     private void onAuthSuccess(FirebaseUser user) {
         String username = usernameFromEmail(user.getEmail());
 
-        // Write new user
         writeNewUser(user.getUid(), username, user.getEmail());
 
-        // Go to MainActivity
         startActivity(new Intent(SignInActivity.this, MainActivity.class));
         finish();
     }
@@ -154,14 +148,11 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
 
         return result;
     }
-
-    // [START basic_write]
     private void writeNewUser(String userId, String name, String email) {
         User user = new User(name, email);
 
         mDatabase.child("users").child(userId).setValue(user);
     }
-    // [END basic_write]
 
     @Override
     public void onClick(View v) {

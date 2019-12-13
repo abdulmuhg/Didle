@@ -2,7 +2,6 @@ package personal.abdulmughniaf.diarybook.models;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 
-// [START comment_class]
 @IgnoreExtraProperties
 public class Comment {
 
@@ -11,7 +10,7 @@ public class Comment {
     public String text;
 
     public Comment() {
-        // Default constructor required for calls to DataSnapshot.getValue(Comment.class)
+
     }
 
     public Comment(String uid, String author, String text) {
@@ -21,4 +20,3 @@ public class Comment {
     }
 
 }
-// [END comment_class]

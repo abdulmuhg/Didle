@@ -46,7 +46,6 @@ public class  MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Create the adapter that will return a fragment for each section
         mPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager(),
                 FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             private final Fragment[] mFragments = new Fragment[] {
@@ -72,13 +71,10 @@ public class  MainActivity extends BaseActivity {
                 return mFragmentNames[position];
             }
         };
-        // Set up the ViewPager with the sections adapter.
         mViewPager = findViewById(R.id.container);
         mViewPager.setAdapter(mPagerAdapter);
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
-        // Button launches NewDiaryActivity
         findViewById(R.id.fabNewPost).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
