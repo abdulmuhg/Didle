@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DiaryBook</string>
+    <string name="app_name">Didle</string>
     <string name="action_settings">Settings</string>
     <string name="menu_login">Log in</string>
     <string name="menu_logout">Log out</string>
@@ -15,5 +15,6 @@
     <string name="sign_in">Sign In</string>
     <string name="heading_home">Home</string>
     <string name="heading_my_diary">My Diary</string>
-    <string name="heading_my_top_diary">My Top Diary</string>
+    <string name="heading_loved">Beloved</string>
+    <string name="app_desc">a place to share your diary</string>
 </resources>

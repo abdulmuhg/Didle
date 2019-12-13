@@ -38,6 +38,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        getSupportActionBar().hide();
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
@@ -117,8 +118,9 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
         String username = usernameFromEmail(user.getEmail());
 
         writeNewUser(user.getUid(), username, user.getEmail());
-
-        startActivity(new Intent(SignInActivity.this, MainActivity.class));
+        Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+        intent.putExtra("EXTRA_USERNAME", username);
+        startActivity(intent);
         finish();
     }
 

@@ -34,11 +34,13 @@ public class DiaryDetailActivity extends BaseActivity implements View.OnClickLis
     private static final String TAG = "DiaryDetailActivity";
 
     public static final String EXTRA_POST_KEY = "post_key";
+    public static final String EXTRA_POST_USER = "post_user";
 
     private DatabaseReference mPostReference;
     private DatabaseReference mCommentsReference;
     private ValueEventListener mPostListener;
     private String mPostKey;
+    private String author;
     private CommentAdapter mAdapter;
 
     private TextView mAuthorView;
@@ -53,6 +55,9 @@ public class DiaryDetailActivity extends BaseActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diary_detail);
         mPostKey = getIntent().getStringExtra(EXTRA_POST_KEY);
+        author = getIntent().getStringExtra(EXTRA_POST_USER);
+
+        setTitle(author + "'s Diary");
         if (mPostKey == null) {
             throw new IllegalArgumentException("Must pass EXTRA_POST_KEY");
         }

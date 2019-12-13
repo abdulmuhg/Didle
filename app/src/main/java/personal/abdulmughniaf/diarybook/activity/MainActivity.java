@@ -45,6 +45,8 @@ public class  MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String username = getIntent().getStringExtra("EXTRA_USERNAME");
+        setTitle("Hello, " + username + "  :)");
 
         mPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager(),
                 FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
@@ -56,7 +58,7 @@ public class  MainActivity extends BaseActivity {
             private final String[] mFragmentNames = new String[] {
                     getString(R.string.heading_home),
                     getString(R.string.heading_my_diary),
-                    getString(R.string.heading_my_top_diary)
+                    getString(R.string.heading_loved)
             };
             @Override
             public Fragment getItem(int position) {

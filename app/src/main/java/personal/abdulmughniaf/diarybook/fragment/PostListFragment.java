@@ -78,19 +78,21 @@ public abstract class PostListFragment extends Fragment {
                 final DatabaseReference postRef = getRef(position);
 
                 final String postKey = postRef.getKey();
+                final String author = viewHolder.authorView.getText().toString();
                 viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(getActivity(), DiaryDetailActivity.class);
                         intent.putExtra(DiaryDetailActivity.EXTRA_POST_KEY, postKey);
+                        intent.putExtra(DiaryDetailActivity.EXTRA_POST_USER, author);
                         startActivity(intent);
                     }
                 });
 
                 if (model.stars.containsKey(getUid())) {
-                    viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_24);
+                    viewHolder.starView.setImageResource(R.drawable.ic_toggle_favorite);
                 } else {
-                    viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_outline_24);
+                    viewHolder.starView.setImageResource(R.drawable.ic_toggle_favorite_border);
                 }
 
                 viewHolder.bindToPost(model, new View.OnClickListener() {
