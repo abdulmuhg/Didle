@@ -4,5 +4,5 @@ A Simple Diary Track App for Final Assignment Mobile Programming Course Multimed
 # Preview:
 bit.ly/DidleAppPreview
 
-#You can try it on your device (Android)
+# You can try it on your device (Android)
 bit.ly/DidleDemo
